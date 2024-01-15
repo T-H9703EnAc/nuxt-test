@@ -1,0 +1,26 @@
+{
+    "name": "nuxt",
+    "build": {
+      "dockerfile": "../docker/Dockerfile",
+      "context": "../"
+    },
+    "workspaceFolder": "/app",
+    "customizations": {
+      "vscode": {
+        "settings": {
+          "terminal.integrated.shell.linux": "/bin/bash"
+        },
+        // VSCodeで使用する拡張機能
+        "extensions": [
+          "Nuxtr.nuxt-vscode-extentions", // Nuxt Extension Pack
+          "bcakyz.vue-packs", // Vue and Nuxt Pack
+          "MS-CEINTL.vscode-language-pack-ja" // Japanese Language Pack for Visual Studio Code
+        ]
+      }
+    },
+    "forwardPorts": [3000],
+    "mounts": [
+      "source=${localWorkspaceFolder}/app,target=/app,type=bind,consistency=cached"
+    ]
+  }
+  
